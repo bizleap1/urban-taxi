@@ -70,25 +70,25 @@ export function TestimonialsSection() {
   };
 
   return (
-    <section id="testimonials" className="py-24 bg-[#0c0c0c] relative">
-      <div className="container mx-auto px-6 md:px-12 relative z-10">
-        <div className="text-center mb-16">
+    <section id="testimonials" className="py-12 sm:py-16 md:py-24 bg-[#0c0c0c] relative">
+      <div className="container mx-auto px-4 sm:px-6 md:px-12 relative z-10">
+        <div className="text-center mb-8 sm:mb-12 md:mb-16">
           <motion.span 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-accent text-sm tracking-[0.3em] uppercase mb-4 block"
           >
-            Testimonials
+            Reviews
           </motion.span>
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-5xl md:text-6xl lg:text-7xl font-heading text-white mb-6"
+            className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-heading text-white mb-4 sm:mb-6"
           >
-            Words from Our <span className="text-gradient">Clients</span>
+            Client <span className="text-gradient">Reviews</span>
           </motion.h2>
         </div>
 
@@ -97,7 +97,7 @@ export function TestimonialsSection() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2, duration: 0.8 }}
-          className="max-w-7xl mx-auto mt-12"
+          className="max-w-7xl mx-auto mt-6 sm:mt-8 md:mt-12"
         >
           <Swiper
             key={testimonials.length} // Force re-render when new testimonial is added
@@ -117,7 +117,7 @@ export function TestimonialsSection() {
           >
             {testimonials.map((testimonial, index) => (
               <SwiperSlide key={index} className="h-auto">
-                <div className="glass-dark p-8 md:p-10 rounded-2xl text-center relative mx-2 mt-10 mb-4 h-full flex flex-col justify-between hover:bg-white/5 transition-colors duration-300 border border-white/5">
+                <div className="glass-dark p-6 sm:p-8 md:p-10 rounded-2xl text-center relative mx-1 sm:mx-2 mt-10 mb-4 h-full flex flex-col justify-between hover:bg-white/5 transition-colors duration-300 border border-white/5">
                   <div>
                     <div className="absolute -top-10 left-1/2 -translate-x-1/2">
                       <div className="w-20 h-20 rounded-full border-2 border-accent p-1 bg-[#0c0c0c] shadow-lg shadow-black/50">
@@ -142,10 +142,10 @@ export function TestimonialsSection() {
             ))}
           </Swiper>
           
-          <div className="flex justify-center mt-12">
+          <div className="flex justify-center mt-8 sm:mt-10 md:mt-12">
             <button 
               onClick={() => setIsModalOpen(true)}
-              className="flex items-center gap-3 bg-accent text-black px-8 py-4 rounded-full font-heading uppercase tracking-wider text-sm hover:bg-white hover:text-black transition-all duration-300 shadow-[0_0_20px_rgba(212,175,55,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)]"
+              className="flex items-center gap-2 sm:gap-3 bg-accent text-black px-6 sm:px-8 py-3 sm:py-4 rounded-full font-heading uppercase tracking-wider text-xs sm:text-sm hover:bg-white hover:text-black transition-all duration-300 shadow-[0_0_20px_rgba(212,175,55,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)]"
             >
               <MessageSquarePlus size={20} />
               Add Your Experience

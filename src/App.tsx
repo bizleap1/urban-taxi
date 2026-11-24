@@ -1,13 +1,9 @@
 import { useEffect } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Lenis from '@studio-freight/lenis';
 import { Home } from './pages/Home';
 import { MouseSpotlight } from './components/MouseSpotlight';
 import { FloatingParticles } from './components/FloatingParticles';
 import { FloatingContactButtons } from './components/FloatingContactButtons';
-
-import { UrbaniaPrices } from './pages/UrbaniaPrices';
-import { InnovaPrices } from './pages/InnovaPrices';
 import { BookingModal } from './components/BookingModal';
 import { useState } from 'react';
 
@@ -41,17 +37,13 @@ function App() {
   }, []);
 
   return (
-    <BrowserRouter>
+    <>
       <MouseSpotlight />
       <FloatingParticles />
       <FloatingContactButtons />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/urbania-prices" element={<UrbaniaPrices />} />
-        <Route path="/innova-prices" element={<InnovaPrices />} />
-      </Routes>
+      <Home />
       <BookingModal isOpen={isBookingModalOpen} onClose={() => setIsBookingModalOpen(false)} />
-    </BrowserRouter>
+    </>
   );
 }
 

@@ -13,29 +13,29 @@ export function GallerySection() {
   const [activeItem, setActiveItem] = useState<{url: string, type: string, title: string} | null>(null);
 
   return (
-    <section id="gallery" className="py-24 bg-[#0c0c0c] relative">
-      <div className="container mx-auto px-6 md:px-12">
-        <div className="text-center mb-16">
+    <section id="gallery" className="py-12 sm:py-16 md:py-24 bg-[#0c0c0c] relative">
+      <div className="container mx-auto px-4 sm:px-6 md:px-12">
+        <div className="text-center mb-8 sm:mb-12 md:mb-16">
           <motion.span 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-accent text-sm tracking-[0.3em] uppercase mb-4 block"
           >
-            Gallery
+            Past Journeys
           </motion.span>
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-5xl md:text-6xl lg:text-7xl font-heading text-white mb-6"
+            className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-heading text-white mb-4 sm:mb-6"
           >
             A Glimpse of <span className="text-accent italic font-serif">Luxury</span>
           </motion.h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 auto-rows-[250px] md:auto-rows-[300px] gap-4 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 auto-rows-[200px] sm:auto-rows-[250px] md:auto-rows-[300px] gap-3 sm:gap-4 max-w-6xl mx-auto">
           {galleryItems.map((item, index) => (
             <motion.div
               key={index}
@@ -88,7 +88,7 @@ export function GallerySection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-lg p-4 md:p-12"
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-lg p-3 sm:p-4 md:p-12"
             onClick={() => setActiveItem(null)}
           >
             <button 
